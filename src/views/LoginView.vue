@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import AuthLayout from '@/layouts/AuthLayout.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const handleLoginClick = () => {
+    router.push({ name: "adminDashboard" });
+};
 </script>
 
 <template>
@@ -10,7 +17,7 @@ import AuthLayout from '@/layouts/AuthLayout.vue';
             <v-text-field label="Contraseña" type="password" variant="solo-filled" class="w-100"
                 clearable></v-text-field>
 
-            <v-btn color="light-green-darken-2" size="large" class="w-100">
+            <v-btn color="light-green-darken-2" size="large" class="w-100" @click="handleLoginClick">
                 Iniciar Sesión
             </v-btn>
 

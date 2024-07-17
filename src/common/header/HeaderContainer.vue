@@ -1,5 +1,13 @@
 <script setup>
 
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const handleLoginClick = () => {
+    router.push({ name: "authLogin" });
+};
+
 const emit = defineEmits(['changeSidebar'])
 const emitEvento = () => {
     emit('changeSidebar');
@@ -22,7 +30,7 @@ const emitEvento = () => {
                     <v-list-item>
                         <v-divider></v-divider>
                         <v-list-item-title>
-                            <v-btn color="blue-darken-1">
+                            <v-btn color="blue-darken-1" @click="handleLoginClick">
                                 Cerrar Sesion
                             </v-btn>
                         </v-list-item-title>
